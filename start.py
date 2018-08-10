@@ -11,10 +11,19 @@ can.pack(expand=True)
 
 l = linelist(can)
 l.setMaxLine(100)
+l.initList(xpos='center')
 l.createList()
 
-b = bubble(can)
+b = bubble()
 b.setList(l)
-b.sort()
+b.initSort()
+
+def listStep():
+    if b.step():
+        can.after(2, listStep)
+
+listStep()
 
 root.mainloop()
+
+
