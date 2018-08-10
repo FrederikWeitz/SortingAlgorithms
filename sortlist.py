@@ -12,6 +12,9 @@ class valueLine():
         self.y_limit = 0  # the lower limit on the canvas
         self.line = None   # stores the grafical representation of the line (a 'widget')
 
+    def __del__(self):
+        self.can.delete(self.line)
+
     def setValue(self, value):
         self.value = value
 
