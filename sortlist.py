@@ -12,7 +12,7 @@ class valueLine():
         self.y_limit = 0  # the lower limit on the canvas
         self.line = None   # stores the grafical representation of the line (a 'widget')
 
-    def __del__(self):
+    def delete(self):
         self.can.delete(self.line)
 
     def setValue(self, value):
@@ -113,6 +113,7 @@ class linelist():
     def deleteList(self):
         for i in range(len(self.line)):
             delEl = self.line.pop()
+            delEl.delete()
             del delEl
 
     def getLineValue(self, pos):
