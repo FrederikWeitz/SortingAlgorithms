@@ -2,6 +2,7 @@ from tkinter import *
 
 from sortlist import linelist
 from bubble import bubble
+from sortmenu import sortmenu
 
 root = Tk()
 
@@ -21,6 +22,8 @@ b.initSort()
 def listStep():
     if b.step():
         can.after(2, listStep)
+
+canmenu = sortmenu(can)
 
 listStep()
 
